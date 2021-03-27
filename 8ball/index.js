@@ -10,7 +10,7 @@ module.exports = {
             name: '8ball',
             alias: ['8ball'],
             args: ['question'],
-            flags: ['channel'],
+            flags: [''],
             data: {
                 validation: {
                     args: Jade.object({
@@ -18,26 +18,11 @@ module.exports = {
                     }),
                     failAction: 'error',
                 },
-                handler: async (message, { args: { question }, flags: { channel } }) => {
+                handler: async (message, { args: { question } }) => {
 
                     let c = message.channel;
                     function numberGen(min, max) { 
                         return Math.floor(Math.random() * (max - min + 1) + min);
-                    }
-
-                    if (channel) {
-
-                        if (message.client.channels.cache.has(channel)) {
-
-                            c = message.client.channels.cache.get(channel);
-                        }
-                        else {
-
-                            const match = channel.match(/<#(\d{17,19})>/);
-                            if (message.client.channels.cache.has(match[1])) {
-                                c = message.client.channels.cache.get(match[1]);
-                            }
-                        }
                     }
 
                     try {
