@@ -1,0 +1,11 @@
+{
+  "name": "8ball",
+  "version": "1.0.0",
+  "description": "8ball command for BotSocket",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "S6ad0w",
+  "license": "ISC"
+}
